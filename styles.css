@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -57,12 +57,24 @@ BODY {
 H1 {
 	font-size: 50px;
 	}
+H2 {
+	font-size: 40px;
+	}
+.example {
+	font-size: 30px;
+	}		
+P {
+	margin: 20px 0;
+	}
+.desc B {
+	padding: 0 3px;
+	background: palegoldenrod;
+	}
 /* ---------------------- *\
 	Layout
 \* ---------------------- */
-
 .wrapper {
-	width: 740px;
+	width: 840px;
 	margin: 50px auto;
 	}
 .header {
@@ -78,7 +90,7 @@ H1 {
 	List
 \* ---------------------- */
 UL {
-	width: 740px;
+	width: 840px;
 	margin: 20px auto;
 	border: 1px solid #DDD;
 	font-size: 35px;
@@ -87,15 +99,15 @@ UL {
 	UL:after {
 		content: "";
 		display: table;
-		width: 100px;
+		width: 100%;
 		clear: both;
 		}
 	LI {
 		display: block;
 		position: relative;
 		float: left;
-		width: 70px;
-		height: 70px;
+		width: 80px;
+		height: 80px;
 		margin: 2px;
 		-webkit-box-sizing: border-box;
 		   -moz-box-sizing: border-box;
@@ -110,9 +122,9 @@ UL {
 			width: 100%;
 			text-align: center;
 			}
-		LI:before {
-			content: attr(data-num);
+		LI I {
 			position: absolute;
+			z-index: 10;
 			top: 0;
 			right: 0;
 			padding: 2px;
