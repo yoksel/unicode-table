@@ -4,6 +4,10 @@ print_select();
 
 print_symbols ( 10000 );
 
+function num_to_hex ( num ){
+    return num.toString(16);
+}
+
 function num_readable( num ) {
     var num = num + "";
     return num.slice(-9, -6) + " " + num.slice(-6, -3) + " " + num.slice(-3);
@@ -47,7 +51,11 @@ function print_symbols ( max ) {
 
     for ( var i = min; i <= max; i++ ){
     	var char_i = String.fromCharCode(i);
-        out += ( char_i != ""  ) ? "<li><i>" + i + "</i><span>"  + String.fromCharCode(i) + "</span></li>\n" : ""; 
+
+        out += "<li><code><i class=\"num\">&amp;#" + i + "</i>";
+        out += "<i class=\"hex\">\\" + num_to_hex( i ) + "</i></code>";
+        out += "<span>"  + String.fromCharCode(i) + "</span></li>\n"; 
+
     	out += ( i > 0 && i % 1000 == 0 ) ? "</ul>\n<h2>" + i + "</h2><ul>" : "";
     }
 
