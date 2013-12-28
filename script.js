@@ -47,8 +47,8 @@ function print_symbols ( max ) {
 
     for ( var i = min; i <= max; i++ ){
     	var char_i = String.fromCharCode(i);
-        out += ( char_i != ""  ) ? "<li data-num=\"" + i + "\"><span>"  + String.fromCharCode(i) + "</span></li>\n" : ""; 
-    	out += ( i > 0 && i % 1000 == 0 ) ? "</ul>\n<ul>" : "";
+        out += ( char_i != ""  ) ? "<li><i>" + i + "</i><span>"  + String.fromCharCode(i) + "</span></li>\n" : ""; 
+    	out += ( i > 0 && i % 1000 == 0 ) ? "</ul>\n<h2>" + i + "</h2><ul>" : "";
     }
 
     out += "</ul>";
