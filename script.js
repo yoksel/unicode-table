@@ -56,7 +56,9 @@ function print_symbols ( max ) {
         out += "<i class=\"hex\">\\" + num_to_hex( i ) + "</i></code>";
         out += "<span>"  + String.fromCharCode(i) + "</span></li>\n"; 
 
-    	out += ( i > 0 && i % 1000 == 0 ) ? "</ul>\n<h2>" + i + "</h2><ul>" : "";
+    	out += ( i < max 
+                 && i > 0 
+                 && i % 1000 == 0 ) ? "</ul>\n<h2>" + i + "</h2><ul>" : "";
     }
 
     out += "</ul>";
