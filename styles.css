@@ -52,7 +52,7 @@ table {
 
 BODY {
 	background: #FFF;
-	font: 16px/1 'Trebuchet Ms',sans-serif;
+	font: 16px/1.4 'Trebuchet Ms',sans-serif;
 	}
 
 H1 {
@@ -84,16 +84,20 @@ P {
 	border-bottom: 1px solid #DDD;
 	}
 .desc {
-	margin: 20px 0 ;
+	margin: 30px 0;
 	}
-
+.wrapper--range-select {
+	border-top: 1px solid #DDD;
+	padding-top: 30px;
+	text-align: center;
+	}
 /* ---------------------- *\
 	List
 \* ---------------------- */
 
 UL {
 	width: 840px;
-	margin: 20px auto;
+	margin: 30px 0;
 	border: 1px solid #DDD;
 	font-size: 32px;
 	line-height: 1;
