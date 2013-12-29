@@ -61,12 +61,21 @@ H1 {
 H2 {
 	font-size: 40px;
 	}
+H3 {
+	font-size: 35px;
+	}
+H4 {
+	font-size: 25px;
+	}		
 .example {
 	font-size: 30px;
 	}		
 P {
 	margin: 20px 0;
 	}
+	P:first-child {
+		margin-top: 0;
+		}
 .desc B {
 	padding: 0 3px;
 	background: palegoldenrod;
@@ -75,7 +84,7 @@ P {
 	Layout
 \* ---------------------- */
 .wrapper {
-	width: 840px;
+	width: 1200px;
 	margin: 50px auto;
 	}
 .header {
@@ -83,32 +92,51 @@ P {
 	padding-bottom: 30px;
 	border-bottom: 1px solid #DDD;
 	}
-.desc {
-	margin: 30px 0;
+.section {
+	}	
+.main {
+	width: 840px;
+	float: left;
 	}
-.wrapper--range-select {
+	.aside {
+		width: 310px;
+		float: right;
+		}
+.desc {
+	margin-bottom: 30px;
+	}
+.header--symbols {
 	border-top: 1px solid #DDD;
 	padding-top: 30px;
-	text-align: center;
 	}
+.wrapper--range-select {
+	float: right;
+	line-height: 50px;
+	}
+.title--symbols {
+	float: left;
+	max-width: 570px;
+	}	
+.section:after,
+.header--symbols:after,
+.list--entities:after {
+	content: "";
+	display: table;
+	width: 100%;
+	clear: both;
+	}	
 /* ---------------------- *\
-	List
+	Entities List
 \* ---------------------- */
 
-UL {
+.list--entities {
 	width: 840px;
 	margin: 30px 0;
 	border: 1px solid #DDD;
 	font-size: 32px;
 	line-height: 1;
 	}
-	UL:after {
-		content: "";
-		display: table;
-		width: 100%;
-		clear: both;
-		}
-	LI {
+	.list--entities LI {
 		display: block;
 		position: relative;
 		float: left;
@@ -123,7 +151,7 @@ UL {
 		.full {
 			width: 100%;
 			}
-		LI SPAN {
+		.list--entities LI SPAN {
 			display: inline-block;
 			position: absolute;
 			left: 3px;
@@ -131,7 +159,7 @@ UL {
 			width: 100%;
 			text-align: center;
 			}
-		LI CODE {
+		.list--entities LI CODE {
 			position: absolute;
 			z-index: 10;
 			top: 2px;
@@ -153,4 +181,24 @@ UL {
 				}
 			.hex {
 				background: powderblue;
-				}	
+				}
+/* ---------------------- *\
+	Ranges List
+\* ---------------------- */	
+.aside H4 {
+	margin-bottom: 10px;
+	}
+.list--blocks SPAN {
+	border-bottom: 1px dashed steelblue;
+	cursor: pointer;
+	color: steelblue;
+	}
+	.current SPAN {
+		border-bottom: 0;
+		color: #000;
+		}
+		.current SPAN:before {
+			content: "\2192";
+			margin-right: 5px;
+			color: #AAA;
+			}				
