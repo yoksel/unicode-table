@@ -2,4 +2,4 @@
 ================
 Страница сделана с целью увидеть максимальное количество символов юникода.
 
-Посмотреть можно тут: <a href="http://yoksel.github.io/UnicodeTable/">yoksel.github.io/UnicodeTable/</a>.
+Посмотреть можно тут: <a href="http://yoksel.github.io/unicode-table/">yoksel.github.io/unicode-table/</a>.
