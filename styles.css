@@ -188,17 +188,25 @@ P {
 .aside H4 {
 	margin-bottom: 10px;
 	}
-.list--blocks SPAN {
-	border-bottom: 1px dashed steelblue;
-	cursor: pointer;
-	color: steelblue;
+.list--blocks {
+	margin: 10px 0 30px;
 	}
-	.current SPAN {
-		border-bottom: 0;
-		color: #000;
+	.list--blocks LI {
+		margin-bottom: 3px;
+		}	
+	.list--blocks SPAN {
+		border-bottom: 1px dashed steelblue;
+		cursor: pointer;
+		font-size: 14px;
+		
+		color: steelblue;
 		}
-		.current SPAN:before {
-			content: "\2192";
-			margin-right: 5px;
-			color: #AAA;
-			}				
+		.current SPAN {
+			border-bottom: 0;
+			color: #000;
+			}
+			.current SPAN:before {
+				content: "\2192";
+				margin-right: 5px;
+				color: #AAA;
+				}				

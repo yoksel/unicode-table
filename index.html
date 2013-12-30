@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <meta charset="utf-8">
-		<title>Таблица символов Юникода</title>
-		<link rel="stylesheet" href="styles.css"/>
+            <meta charset="utf-8">
+            <meta name="description" content="Таблица символов Юникода"/>
+            <title>Таблица символов Юникода</title>
+            <link rel="stylesheet" href="styles.css"/>
 	</head>
 	<body>
         <div class="wrapper">
@@ -16,6 +17,8 @@
                         <p>Страница сделана с целью увидеть максимальное количество символов юникода. Вообще из любопытства, но, теоретически, этим можно пользоваться.</p>
                         
                         <p>Для использования в HTML скопируйте код из <span class="num">зелёного поля</span>, для использования в CSS - из <span class="hex">голубого</span>.</p>
+
+                        <p>В данный момент проект в разработке. Для удобного поиска символов юникода можно воспользоваться <a href="http://unicode-table.com/ru/">unicode-table.com</a>.</p>
                                                  
                     </div>
                     <header class="header--symbols">
@@ -28,6 +31,31 @@
                 </main>
                 <aside class="aside">
                     <h4>Блоки Юникода</h4>
+                        
+                    <b>Мой выбор</b>    
+                    <ul class="list--blocks"> 
+                        <li data-range="2000..206F"><span>General Punctuation</span></li>
+                        <li data-range="20D0..20FF"><span>Combining Diacritical Marks for Symbols</span></li>
+
+                        <li data-range="2100..214F"><span>Letterlike Symbols</span></li>
+                        <li data-range="2190..21FF"><span>Arrows</span></li>
+                        <li data-range="2200..22FF"><span>Mathematical Operators</span></li>
+                        <li data-range="2300..23FF"><span>Miscellaneous Technical</span></li>
+                        <li data-range="2460..24FF"><span>Enclosed Alphanumerics</span></li>
+                        <li data-range="2500..257F"><span>Box Drawing</span></li>
+                        <li data-range="2580..259F"><span>Block Elements</span></li>
+                        <li data-range="25A0..25FF"><span>Geometric Shapes</span></li>
+                        <li data-range="2600..26FF"><span>Miscellaneous Symbols</span></li>
+                        <li data-range="2700..27BF"><span>Dingbats</span></li>
+                        <li data-range="27C0..27EF"><span>Miscellaneous Mathematical Symbols-A</span></li>
+                        <li data-range="27F0..27FF"><span>Supplemental Arrows-A</span></li>
+                        <li data-range="2900..297F"><span>Supplemental Arrows-B</span></li>
+                        <li data-range="2980..29FF"><span>Miscellaneous Mathematical Symbols-B</span></li>
+                        <li data-range="2A00..2AFF"><span>Supplemental Mathematical Operators</span></li>
+                        <li data-range="2B00..2BFF"><span>Miscellaneous Symbols and Arrows</span></li>
+                    </ul>    
+                        
+                    <b>Все</b>        
                     <ul class="list--blocks">
                         <li data-range="0000..007F"><span>Basic Latin</span></li>
                         <li data-range="0080..00FF"><span>Latin-1 Supplement</span></li>
