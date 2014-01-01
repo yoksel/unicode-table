@@ -102,21 +102,6 @@ P {
 		width: 310px;
 		float: right;
 		}
-.desc {
-	margin-bottom: 30px;
-	}
-.header--symbols {
-	border-top: 1px solid #DDD;
-	padding-top: 30px;
-	}
-.wrapper--range-select {
-	float: right;
-	line-height: 50px;
-	}
-.title--symbols {
-	float: left;
-	max-width: 570px;
-	}	
 .section:after,
 .header--symbols:after,
 .list--entities:after {
@@ -125,6 +110,32 @@ P {
 	width: 100%;
 	clear: both;
 	}	
+
+/* ---------------------- *\
+	Entities List Header
+\* ---------------------- */
+
+.desc {
+	margin-bottom: 30px;
+	}
+.header--symbols {
+	border-top: 1px solid #DDD;
+	padding-top: 30px;
+	}
+.select--blocks {
+	float: right;
+	margin-top: 20px;
+	}
+.title--symbols {
+	float: left;
+	max-width: 530px;
+	}
+	.title--symbols SPAN {
+		margin-left: 10px;
+		font-size: 14px;
+		color: #999;
+		}	
+
 /* ---------------------- *\
 	Entities List
 \* ---------------------- */
@@ -133,6 +144,7 @@ P {
 	width: 840px;
 	margin: 30px 0;
 	border: 1px solid #DDD;
+	font-family: "Arial Unicode MS", Arial, sans-serif;
 	font-size: 32px;
 	line-height: 1;
 	}

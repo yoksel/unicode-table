@@ -1,3 +1,7 @@
+---
+layout: mainpage
+layout_type: mainpage
+---
 <!DOCTYPE html>
 <html>
 	<head>
@@ -22,11 +26,11 @@
                                                  
                     </div>
                     <header class="header--symbols">
-                        <div class="wrapper--range-select" id="wrapper--range-select"></div>
+                        {% include select-blocks.html %}
                         <h3 class="title--symbols">Блоки Юникода</h3>
                     </header>
             		<div class="symbols" id="symbols">
-            			...
+            			Загрузка...
             		</div>
                 </main>
                 <aside class="aside">
@@ -54,230 +58,7 @@
                         <li data-range="2A00..2AFF"><span>Supplemental Mathematical Operators</span></li>
                         <li data-range="2B00..2BFF"><span>Miscellaneous Symbols and Arrows</span></li>
                     </ul>    
-                        
-                    <b>Все</b>        
-                    <ul class="list--blocks">
-                        <li data-range="0000..007F"><span>Basic Latin</span></li>
-                        <li data-range="0080..00FF"><span>Latin-1 Supplement</span></li>
-                        <li data-range="0100..017F"><span>Latin Extended-A</span></li>
-                        <li data-range="0180..024F"><span>Latin Extended-B</span></li>
-                        <li data-range="0250..02AF"><span>IPA Extensions</span></li>
-                        <li data-range="02B0..02FF"><span>Spacing Modifier Letters</span></li>
-                        <li data-range="0300..036F"><span>Combining Diacritical Marks</span></li>
-                        <li data-range="0370..03FF"><span>Greek and Coptic</span></li>
-                        <li data-range="0400..04FF"><span>Cyrillic</span></li>
-                        <li data-range="0500..052F"><span>Cyrillic Supplement</span></li>
-                        <li data-range="0530..058F"><span>Armenian</span></li>
-                        <li data-range="0590..05FF"><span>Hebrew</span></li>
-                        <li data-range="0600..06FF"><span>Arabic</span></li>
-                        <li data-range="0700..074F"><span>Syriac</span></li>
-                        <li data-range="0750..077F"><span>Arabic Supplement</span></li>
-                        <li data-range="0780..07BF"><span>Thaana</span></li>
-                        <li data-range="07C0..07FF"><span>NKo</span></li>
-                        <li data-range="0800..083F"><span>Samaritan</span></li>
-                        <li data-range="0840..085F"><span>Mandaic</span></li>
-                        <li data-range="08A0..08FF"><span>Arabic Extended-A</span></li>
-                        <li data-range="0900..097F"><span>Devanagari</span></li>
-                        <li data-range="0980..09FF"><span>Bengali</span></li>
-                        <li data-range="0A00..0A7F"><span>Gurmukhi</span></li>
-                        <li data-range="0A80..0AFF"><span>Gujarati</span></li>
-                        <li data-range="0B00..0B7F"><span>Oriya</span></li>
-                        <li data-range="0B80..0BFF"><span>Tamil</span></li>
-                        <li data-range="0C00..0C7F"><span>Telugu</span></li>
-                        <li data-range="0C80..0CFF"><span>Kannada</span></li>
-                        <li data-range="0D00..0D7F"><span>Malayalam</span></li>
-                        <li data-range="0D80..0DFF"><span>Sinhala</span></li>
-                        <li data-range="0E00..0E7F"><span>Thai</span></li>
-                        <li data-range="0E80..0EFF"><span>Lao</span></li>
-                        <li data-range="0F00..0FFF"><span>Tibetan</span></li>
-                        <li data-range="1000..109F"><span>Myanmar</span></li>
-                        <li data-range="10A0..10FF"><span>Georgian</span></li>
-                        <li data-range="1100..11FF"><span>Hangul Jamo</span></li>
-                        <li data-range="1200..137F"><span>Ethiopic</span></li>
-                        <li data-range="1380..139F"><span>Ethiopic Supplement</span></li>
-                        <li data-range="13A0..13FF"><span>Cherokee</span></li>
-                        <li data-range="1400..167F"><span>Unified Canadian Aboriginal Syllabics</span></li>
-                        <li data-range="1680..169F"><span>Ogham</span></li>
-                        <li data-range="16A0..16FF"><span>Runic</span></li>
-                        <li data-range="1700..171F"><span>Tagalog</span></li>
-                        <li data-range="1720..173F"><span>Hanunoo</span></li>
-                        <li data-range="1740..175F"><span>Buhid</span></li>
-                        <li data-range="1760..177F"><span>Tagbanwa</span></li>
-                        <li data-range="1780..17FF"><span>Khmer</span></li>
-                        <li data-range="1800..18AF"><span>Mongolian</span></li>
-                        <li data-range="18B0..18FF"><span>Unified Canadian Aboriginal Syllabics Extended</span></li>
-                        <li data-range="1900..194F"><span>Limbu</span></li>
-                        <li data-range="1950..197F"><span>Tai Le</span></li>
-                        <li data-range="1980..19DF"><span>New Tai Lue</span></li>
-                        <li data-range="19E0..19FF"><span>Khmer Symbols</span></li>
-                        <li data-range="1A00..1A1F"><span>Buginese</span></li>
-                        <li data-range="1A20..1AAF"><span>Tai Tham</span></li>
-                        <li data-range="1B00..1B7F"><span>Balinese</span></li>
-                        <li data-range="1B80..1BBF"><span>Sundanese</span></li>
-                        <li data-range="1BC0..1BFF"><span>Batak</span></li>
-                        <li data-range="1C00..1C4F"><span>Lepcha</span></li>
-                        <li data-range="1C50..1C7F"><span>Ol Chiki</span></li>
-                        <li data-range="1CC0..1CCF"><span>Sundanese Supplement</span></li>
-                        <li data-range="1CD0..1CFF"><span>Vedic Extensions</span></li>
-                        <li data-range="1D00..1D7F"><span>Phonetic Extensions</span></li>
-                        <li data-range="1D80..1DBF"><span>Phonetic Extensions Supplement</span></li>
-                        <li data-range="1DC0..1DFF"><span>Combining Diacritical Marks Supplement</span></li>
-                        <li data-range="1E00..1EFF"><span>Latin Extended Additional</span></li>
-                        <li data-range="1F00..1FFF"><span>Greek Extended</span></li>
-                        <li data-range="2000..206F"><span>General Punctuation</span></li>
-                        <li data-range="2070..209F"><span>Superscripts and Subscripts</span></li>
-                        <li data-range="20A0..20CF"><span>Currency Symbols</span></li>
-                        <li data-range="20D0..20FF"><span>Combining Diacritical Marks for Symbols</span></li>
-                        <li data-range="2100..214F"><span>Letterlike Symbols</span></li>
-                        <li data-range="2150..218F"><span>Number Forms</span></li>
-                        <li data-range="2190..21FF"><span>Arrows</span></li>
-                        <li data-range="2200..22FF"><span>Mathematical Operators</span></li>
-                        <li data-range="2300..23FF"><span>Miscellaneous Technical</span></li>
-                        <li data-range="2400..243F"><span>Control Pictures</span></li>
-                        <li data-range="2440..245F"><span>Optical Character Recognition</span></li>
-                        <li data-range="2460..24FF"><span>Enclosed Alphanumerics</span></li>
-                        <li data-range="2500..257F"><span>Box Drawing</span></li>
-                        <li data-range="2580..259F"><span>Block Elements</span></li>
-                        <li data-range="25A0..25FF"><span>Geometric Shapes</span></li>
-                        <li data-range="2600..26FF"><span>Miscellaneous Symbols</span></li>
-                        <li data-range="2700..27BF"><span>Dingbats</span></li>
-                        <li data-range="27C0..27EF"><span>Miscellaneous Mathematical Symbols-A</span></li>
-                        <li data-range="27F0..27FF"><span>Supplemental Arrows-A</span></li>
-                        <li data-range="2800..28FF"><span>Braille Patterns</span></li>
-                        <li data-range="2900..297F"><span>Supplemental Arrows-B</span></li>
-                        <li data-range="2980..29FF"><span>Miscellaneous Mathematical Symbols-B</span></li>
-                        <li data-range="2A00..2AFF"><span>Supplemental Mathematical Operators</span></li>
-                        <li data-range="2B00..2BFF"><span>Miscellaneous Symbols and Arrows</span></li>
-                        <li data-range="2C00..2C5F"><span>Glagolitic</span></li>
-                        <li data-range="2C60..2C7F"><span>Latin Extended-C</span></li>
-                        <li data-range="2C80..2CFF"><span>Coptic</span></li>
-                        <li data-range="2D00..2D2F"><span>Georgian Supplement</span></li>
-                        <li data-range="2D30..2D7F"><span>Tifinagh</span></li>
-                        <li data-range="2D80..2DDF"><span>Ethiopic Extended</span></li>
-                        <li data-range="2DE0..2DFF"><span>Cyrillic Extended-A</span></li>
-                        <li data-range="2E00..2E7F"><span>Supplemental Punctuation</span></li>
-                        <li data-range="2E80..2EFF"><span>CJK Radicals Supplement</span></li>
-                        <li data-range="2F00..2FDF"><span>Kangxi Radicals</span></li>
-                        <li data-range="2FF0..2FFF"><span>Ideographic Description Characters</span></li>
-                        <li data-range="3000..303F"><span>CJK Symbols and Punctuation</span></li>
-                        <li data-range="3040..309F"><span>Hiragana</span></li>
-                        <li data-range="30A0..30FF"><span>Katakana</span></li>
-                        <li data-range="3100..312F"><span>Bopomofo</span></li>
-                        <li data-range="3130..318F"><span>Hangul Compatibility Jamo</span></li>
-                        <li data-range="3190..319F"><span>Kanbun</span></li>
-                        <li data-range="31A0..31BF"><span>Bopomofo Extended</span></li>
-                        <li data-range="31C0..31EF"><span>CJK Strokes</span></li>
-                        <li data-range="31F0..31FF"><span>Katakana Phonetic Extensions</span></li>
-                        <li data-range="3200..32FF"><span>Enclosed CJK Letters and Months</span></li>
-                        <li data-range="3300..33FF"><span>CJK Compatibility</span></li>
-                        <li data-range="3400..4DBF"><span>CJK Unified Ideographs Extension A</span></li>
-                        <li data-range="4DC0..4DFF"><span>Yijing Hexagram Symbols</span></li>
-                        <li data-range="4E00..9FFF"><span>CJK Unified Ideographs</span></li>
-                        <li data-range="A000..A48F"><span>Yi Syllables</span></li>
-                        <li data-range="A490..A4CF"><span>Yi Radicals</span></li>
-                        <li data-range="A4D0..A4FF"><span>Lisu</span></li>
-                        <li data-range="A500..A63F"><span>Vai</span></li>
-                        <li data-range="A640..A69F"><span>Cyrillic Extended-B</span></li>
-                        <li data-range="A6A0..A6FF"><span>Bamum</span></li>
-                        <li data-range="A700..A71F"><span>Modifier Tone Letters</span></li>
-                        <li data-range="A720..A7FF"><span>Latin Extended-D</span></li>
-                        <li data-range="A800..A82F"><span>Syloti Nagri</span></li>
-                        <li data-range="A830..A83F"><span>Common Indic Number Forms</span></li>
-                        <li data-range="A840..A87F"><span>Phags-pa</span></li>
-                        <li data-range="A880..A8DF"><span>Saurashtra</span></li>
-                        <li data-range="A8E0..A8FF"><span>Devanagari Extended</span></li>
-                        <li data-range="A900..A92F"><span>Kayah Li</span></li>
-                        <li data-range="A930..A95F"><span>Rejang</span></li>
-                        <li data-range="A960..A97F"><span>Hangul Jamo Extended-A</span></li>
-                        <li data-range="A980..A9DF"><span>Javanese</span></li>
-                        <li data-range="AA00..AA5F"><span>Cham</span></li>
-                        <li data-range="AA60..AA7F"><span>Myanmar Extended-A</span></li>
-                        <li data-range="AA80..AADF"><span>Tai Viet</span></li>
-                        <li data-range="AAE0..AAFF"><span>Meetei Mayek Extensions</span></li>
-                        <li data-range="AB00..AB2F"><span>Ethiopic Extended-A</span></li>
-                        <li data-range="ABC0..ABFF"><span>Meetei Mayek</span></li>
-                        <li data-range="AC00..D7AF"><span>Hangul Syllables</span></li>
-                        <li data-range="D7B0..D7FF"><span>Hangul Jamo Extended-B</span></li>
-                        <li data-range="D800..DB7F"><span>High Surrogates</span></li>
-                        <li data-range="DB80..DBFF"><span>High Private Use Surrogates</span></li>
-                        <li data-range="DC00..DFFF"><span>Low Surrogates</span></li>
-                        <li data-range="E000..F8FF"><span>Private Use Area</span></li>
-                        <li data-range="F900..FAFF"><span>CJK Compatibility Ideographs</span></li>
-                        <li data-range="FB00..FB4F"><span>Alphabetic Presentation Forms</span></li>
-                        <li data-range="FB50..FDFF"><span>Arabic Presentation Forms-A</span></li>
-                        <li data-range="FE00..FE0F"><span>Variation Selectors</span></li>
-                        <li data-range="FE10..FE1F"><span>Vertical Forms</span></li>
-                        <li data-range="FE20..FE2F"><span>Combining Half Marks</span></li>
-                        <li data-range="FE30..FE4F"><span>CJK Compatibility Forms</span></li>
-                        <li data-range="FE50..FE6F"><span>Small Form Variants</span></li>
-                        <li data-range="FE70..FEFF"><span>Arabic Presentation Forms-B</span></li>
-                        <li data-range="FF00..FFEF"><span>Halfwidth and Fullwidth Forms</span></li>
-                        <li data-range="FFF0..FFFF"><span>Specials</span></li>
-                        <li data-range="10000..1007F"><span>Linear B Syllabary</span></li>
-                        <li data-range="10080..100FF"><span>Linear B Ideograms</span></li>
-                        <li data-range="10100..1013F"><span>Aegean Numbers</span></li>
-                        <li data-range="10140..1018F"><span>Ancient Greek Numbers</span></li>
-                        <li data-range="10190..101CF"><span>Ancient Symbols</span></li>
-                        <li data-range="101D0..101FF"><span>Phaistos Disc</span></li>
-                        <li data-range="10280..1029F"><span>Lycian</span></li>
-                        <li data-range="102A0..102DF"><span>Carian</span></li>
-                        <li data-range="10300..1032F"><span>Old Italic</span></li>
-                        <li data-range="10330..1034F"><span>Gothic</span></li>
-                        <li data-range="10380..1039F"><span>Ugaritic</span></li>
-                        <li data-range="103A0..103DF"><span>Old Persian</span></li>
-                        <li data-range="10400..1044F"><span>Deseret</span></li>
-                        <li data-range="10450..1047F"><span>Shavian</span></li>
-                        <li data-range="10480..104AF"><span>Osmanya</span></li>
-                        <li data-range="10800..1083F"><span>Cypriot Syllabary</span></li>
-                        <li data-range="10840..1085F"><span>Imperial Aramaic</span></li>
-                        <li data-range="10900..1091F"><span>Phoenician</span></li>
-                        <li data-range="10920..1093F"><span>Lydian</span></li>
-                        <li data-range="10980..1099F"><span>Meroitic Hieroglyphs</span></li>
-                        <li data-range="109A0..109FF"><span>Meroitic Cursive</span></li>
-                        <li data-range="10A00..10A5F"><span>Kharoshthi</span></li>
-                        <li data-range="10A60..10A7F"><span>Old South Arabian</span></li>
-                        <li data-range="10B00..10B3F"><span>Avestan</span></li>
-                        <li data-range="10B40..10B5F"><span>Inscriptional Parthian</span></li>
-                        <li data-range="10B60..10B7F"><span>Inscriptional Pahlavi</span></li>
-                        <li data-range="10C00..10C4F"><span>Old Turkic</span></li>
-                        <li data-range="10E60..10E7F"><span>Rumi Numeral Symbols</span></li>
-                        <li data-range="11000..1107F"><span>Brahmi</span></li>
-                        <li data-range="11080..110CF"><span>Kaithi</span></li>
-                        <li data-range="110D0..110FF"><span>Sora Sompeng</span></li>
-                        <li data-range="11100..1114F"><span>Chakma</span></li>
-                        <li data-range="11180..111DF"><span>Sharada</span></li>
-                        <li data-range="11680..116CF"><span>Takri</span></li>
-                        <li data-range="12000..123FF"><span>Cuneiform</span></li>
-                        <li data-range="12400..1247F"><span>Cuneiform Numbers and Punctuation</span></li>
-                        <li data-range="13000..1342F"><span>Egyptian Hieroglyphs</span></li>
-                        <li data-range="16800..16A3F"><span>Bamum Supplement</span></li>
-                        <li data-range="16F00..16F9F"><span>Miao</span></li>
-                        <li data-range="1B000..1B0FF"><span>Kana Supplement</span></li>
-                        <li data-range="1D000..1D0FF"><span>Byzantine Musical Symbols</span></li>
-                        <li data-range="1D100..1D1FF"><span>Musical Symbols</span></li>
-                        <li data-range="1D200..1D24F"><span>Ancient Greek Musical Notation</span></li>
-                        <li data-range="1D300..1D35F"><span>Tai Xuan Jing Symbols</span></li>
-                        <li data-range="1D360..1D37F"><span>Counting Rod Numerals</span></li>
-                        <li data-range="1D400..1D7FF"><span>Mathematical Alphanumeric Symbols</span></li>
-                        <li data-range="1EE00..1EEFF"><span>Arabic Mathematical Alphabetic Symbols</span></li>
-                        <li data-range="1F000..1F02F"><span>Mahjong Tiles</span></li>
-                        <li data-range="1F030..1F09F"><span>Domino Tiles</span></li>
-                        <li data-range="1F0A0..1F0FF"><span>Playing Cards</span></li>
-                        <li data-range="1F100..1F1FF"><span>Enclosed Alphanumeric Supplement</span></li>
-                        <li data-range="1F200..1F2FF"><span>Enclosed Ideographic Supplement</span></li>
-                        <li data-range="1F300..1F5FF"><span>Miscellaneous Symbols And Pictographs</span></li>
-                        <li data-range="1F600..1F64F"><span>Emoticons</span></li>
-                        <li data-range="1F680..1F6FF"><span>Transport And Map Symbols</span></li>
-                        <li data-range="1F700..1F77F"><span>Alchemical Symbols</span></li>
-                        <li data-range="20000..2A6DF"><span>CJK Unified Ideographs Extension B</span></li>
-                        <li data-range="2A700..2B73F"><span>CJK Unified Ideographs Extension C</span></li>
-                        <li data-range="2B740..2B81F"><span>CJK Unified Ideographs Extension D</span></li>
-                        <li data-range="2F800..2FA1F"><span>CJK Compatibility Ideographs Supplement</span></li>
-                        <li data-range="E0000..E007F"><span>Tags</span></li>
-                        <li data-range="E0100..E01EF"><span>Variation Selectors Supplement</span></li>
-                        <li data-range="F0000..FFFFF"><span>Supplementary Private Use Area-A</span></li>
-                        <li data-range="100000..10FFFF"><span>Supplementary Private Use Area-B</span></li>
-                    </ul>
+                    
                 </aside>
             </section>    
         </div>
