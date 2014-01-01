@@ -3,7 +3,7 @@ var step = 10000;
 var title_symbols = document.querySelector(".title--symbols");
 var context = "";
 var fonts = ["Arial", "Arial Unicode MS", "Courier New", "Georgia", "Tahoma", "Times", "Trebuchet", "Verdana"];
-
+var default_title = "Полезные символы<span>Моя подборка</span>";
 
 initial();
 
@@ -13,27 +13,18 @@ function print_symbols ( min, max ) {
     var placeOutput = document.getElementById("symbols");
     placeOutput.innerHTML = "Загрузка";
 
-    min = ( min >= 0 ) ? min : max - step + 1;
-
     out += "<ul class=\"list--entities\">";
 
-    for ( var i = min; i <= max; i++ ){
-    	var char_i = String.fromCharCode(i);
-
-        out += "<li class=\"item--entities\"><code><i class=\"num\">&amp;#" + i + "</i>";
-        out += "<i class=\"hex\">\\" + num_to_hex(i) + "</i></code>";
-        out += "<span class=\"show-case\" data-char=\"" + char_i + "\">"  + char_i + "</span>";
-        out += "<span class=\"close\"></span>"; 
-        out += "</li>\n"; 
-
-        if ( i < max 
-                 && i > 0 
-                 && i % 1000 == 0 ) {
-            if ( context == "page" ){    
-                out += "</ul>\n";
-                out += "<h2>" + i + "</h2>";
-                out += "<ul class=\"list--entities\">";
-                }
+    if ( max > 0 ){
+        min = ( min >= 0 ) ? min : max - step + 1;
+        for ( var i = min; i <= max; i++ ){
+        	
+            out += get_symbol (i, max);
+        }
+    }
+    else {
+        for( var k = 0; k < useful.length; k++ ){
+            out += get_symbol (useful[k], max);
         }
     }
 
@@ -43,6 +34,7 @@ function print_symbols ( min, max ) {
 
     add_action_to_symbols_list();
 }
+
 
 function change_data ( data_range, text ) {
 
@@ -104,8 +96,18 @@ function show_range_for_url () {
     var hash_arr = hash.split(" ");
     var data_range = hash_arr[0];
 
-    for ( var i = 1; i < hash_arr.length; i++ ){
-        text += hash_arr[i] + " ";
+    var start = 1;
+
+    if ( hash.indexOf("..") < 0 ){
+        data_range = hash_arr[0] + " " + hash_arr[1];
+        start = 2;
+        }
+
+    for ( var i = start; i < hash_arr.length; i++ ){
+        text += hash_arr[i];
+        if ( i < hash_arr.length - 1 ) {
+            text += " ";
+            }
         }
     
     change_data ( data_range, text );
@@ -188,20 +190,39 @@ function num_readable( num ) {
 
 function initial() {
 
-    var text = "";
-
     if ( document.location.hash != "" ){
         show_range_for_url();
         }
     else {
-        print_symbols ( 0, step, "page" );
-        text = "0  - " + num_readable( step );
-        title_symbols.innerHTML = text;
+        print_symbols ( 0, 0 );
+        title_symbols.innerHTML = default_title;
         }
 
     add_action_to_range_select();    
     add_action_to_range_list();
     add_action_to_close ();
+}
+
+function get_symbol( i, max ) {
+    var out = "";
+    var char_i = String.fromCharCode(i);
+
+    out += "<li class=\"item--entities\"><code><i class=\"num\">&amp;#" + i + "</i>";
+    out += "<i class=\"hex\">\\" + num_to_hex(i) + "</i></code>";
+    out += "<span class=\"show-case\" data-char=\"" + char_i + "\">"  + char_i + "</span>";
+    out += "<span class=\"close\"></span>"; 
+    out += "</li>\n"; 
+
+    if ( i < max 
+             && i > 0 
+             && i % 1000 == 0 
+             && context == "page" ) {
+                out += "</ul>\n";
+                out += "<h2>" + i + "</h2>";
+                out += "<ul class=\"list--entities\">";
+            }
+
+    return out;
 }
 
 function highlight_current_list_item ( data_range ) {

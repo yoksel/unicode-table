@@ -53,6 +53,13 @@ BODY {
 	background: #FFF;
 	font: 16px/1.4 'Trebuchet Ms',sans-serif;
 	}
+
+A {
+	color: steelblue;
+	}	
+	A:hover {
+		text-decoration: none;
+		}
 H1 {
 	font-size: 50px;
 	}
@@ -79,7 +86,7 @@ P {
 	}
 .f-courier-new {
 	font-family: "Courier New", monospace;;
-}	
+	}	
 .f-georgia {
 	font-family: Georgia, serif;
 	}
@@ -182,7 +189,7 @@ P {
 			width: 100%;
 			width: calc(100% - 4px);
 			height: 115px;
-			margin: 2px;
+			margin: 15px 2px;
 			border-width: 5px 0;
 			border-top-color: hsl(100, 59%, 80%);
 			border-bottom-color: powderblue;
@@ -286,17 +293,16 @@ P {
 .aside H4 {
 	margin-bottom: 10px;
 	}
-.list--blocks {
-	margin: 10px 0 30px;
-	}
-	.list--blocks LI {
-		margin-bottom: 3px;
-		}	
+	.aside UL {
+		margin-bottom: 30px;
+		}
+	.aside LI {
+		margin: 0 0 3px 20px;
+		font-size: 14px;
+		}
 	.list--blocks SPAN {
 		border-bottom: 1px dashed steelblue;
 		cursor: pointer;
-		font-size: 14px;
-		
 		color: steelblue;
 		}
 		.current SPAN {
