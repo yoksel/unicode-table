@@ -45,7 +45,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 /* ---------------------- *\
 	Common
 \* ---------------------- */
@@ -54,7 +53,6 @@ BODY {
 	background: #FFF;
 	font: 16px/1.4 'Trebuchet Ms',sans-serif;
 	}
-
 H1 {
 	font-size: 50px;
 	}
@@ -76,13 +74,32 @@ P {
 	P:first-child {
 		margin-top: 0;
 		}
-.desc B {
-	padding: 0 3px;
-	background: palegoldenrod;
+.f-arial{
+	font-family: Arial, sans-serif;
 	}
+.f-courier-new {
+	font-family: "Courier New", monospace;;
+}	
+.f-georgia {
+	font-family: Georgia, serif;
+	}
+.f-tahoma {
+	font-family: Tahoma, sans-serif;
+	}		
+.f-times {
+	font-family: Times, serif;
+	}	
+.f-trebuchet {
+	font-family: "Trebuchet MS";
+	}
+.f-verdana {
+	font-family: Verdana, sans-serif;
+	}			
+
 /* ---------------------- *\
 	Layout
 \* ---------------------- */
+
 .wrapper {
 	width: 1200px;
 	margin: 50px auto;
@@ -143,12 +160,13 @@ P {
 .list--entities {
 	width: 840px;
 	margin: 30px 0;
+	padding: 2px;
 	border: 1px solid #DDD;
 	font-family: "Arial Unicode MS", Arial, sans-serif;
 	font-size: 32px;
 	line-height: 1;
 	}
-	.list--entities LI {
+	.item--entities {
 		display: block;
 		position: relative;
 		float: left;
@@ -160,18 +178,56 @@ P {
 		        box-sizing: border-box;
 		border: 1px solid #DDD;
 		}
-		.full {
+		.full-width {
 			width: 100%;
+			width: calc(100% - 4px);
+			height: 115px;
+			margin: 2px;
+			border-width: 5px 0;
+			border-top-color: hsl(100, 59%, 80%);
+			border-bottom-color: powderblue;
 			}
-		.list--entities LI SPAN {
+		.show-case {
 			display: inline-block;
 			position: absolute;
-			left: 3px;
-			bottom: 5px;
+			left: 0;
+			bottom: 10px;
 			width: 100%;
 			text-align: center;
+			cursor: pointer;
 			}
-		.list--entities LI CODE {
+			.full-width .show-case {
+				cursor: default;
+				/*bottom: 4px;*/
+				}
+			.font-item {
+				display: inline-block;
+				position: relative;
+				width: auto;
+				height: 50px;
+				margin: 0 2px;
+				padding: 0 5px;
+				border: 1px solid #DDD;
+				line-height: 1;
+				text-align: center;
+				vertical-align: middle;
+				}
+				.font-item:after {
+					content: attr(data-name);
+					display: block;
+					position: relative;
+					top: -67px;
+					font: 13px/1 Arial, sans-serif;
+					color: #999;
+					}
+				.font-item:before {
+					content: "";
+					display: inline-block;
+					height: 50px;
+					width: 0;
+					vertical-align: middle;
+					}
+		.list--entities CODE {
 			position: absolute;
 			z-index: 10;
 			top: 2px;
@@ -179,21 +235,51 @@ P {
 			font-size: 12px;			
 			color: #555;
 			}
-		.num,
-		.hex {
-			padding: 2px;
-			}		
-			LI .num,
-			LI .hex {
-				display: block;
-				margin: 0 0 2px 0;
+			.full-width CODE {
+				left: 2px;
+				right: auto;
 				}
-			.num {
-				background: hsl(100, 59%, 80%);
-				}
+			.num,
 			.hex {
-				background: powderblue;
+				padding: 2px;
+				}		
+				LI .num,
+				LI .hex {
+					display: block;
+					margin: 0 0 2px 0;
+					}
+				.num {
+					background: hsl(100, 59%, 80%);
+					}
+				.hex {
+					background: powderblue;
+					}
+		.close {
+			display: none;
+			position: absolute;
+			right: 2px;
+			top: 5px;			
+			z-index: 100;
+			width: 1.6em;
+			height: 1.6em;
+			background: #999;
+			border-radius: 50%;
+			cursor: pointer;
+			text-align: center;
+			font-size: 12px;
+			line-height: 1.6;
+			color: #FFF;
+			transition: all .3s;
+			}
+			.close:hover {
+				background: tomato;
 				}
+			.close:before {
+				content: "\2715";
+				}		
+			.full-width .close {
+				display: block;
+				}			
 /* ---------------------- *\
 	Ranges List
 \* ---------------------- */	

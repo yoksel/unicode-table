@@ -2,6 +2,7 @@ var separator = "..";
 var step = 10000;
 var title_symbols = document.querySelector(".title--symbols");
 var context = "";
+var fonts = ["Arial", "Arial Unicode MS", "Courier New", "Georgia", "Tahoma", "Times", "Trebuchet", "Verdana"];
 
 
 initial();
@@ -19,9 +20,10 @@ function print_symbols ( min, max ) {
     for ( var i = min; i <= max; i++ ){
     	var char_i = String.fromCharCode(i);
 
-        out += "<li><code><i class=\"num\">&amp;#" + i + "</i>";
+        out += "<li class=\"item--entities\"><code><i class=\"num\">&amp;#" + i + "</i>";
         out += "<i class=\"hex\">\\" + num_to_hex(i) + "</i></code>";
-        out += "<span>"  + char_i + "</span>";
+        out += "<span class=\"show-case\" data-char=\"" + char_i + "\">"  + char_i + "</span>";
+        out += "<span class=\"close\"></span>"; 
         out += "</li>\n"; 
 
         if ( i < max 
@@ -38,6 +40,8 @@ function print_symbols ( min, max ) {
     out += "</ul>";
 
     placeOutput.innerHTML = out;
+
+    add_action_to_symbols_list();
 }
 
 function change_data ( data_range, text ) {
@@ -49,7 +53,7 @@ function change_data ( data_range, text ) {
     print_symbols ( min, max );
     title_symbols.innerHTML = text + "<span>" + data_range + "</span>";
     change_href ( data_range, text );
-    remove_current();
+    remove_class("current");
     highlight_current ( data_range );
 }
 
@@ -107,6 +111,66 @@ function show_range_for_url () {
     change_data ( data_range, text );
 }
 
+function add_action_to_symbols_list () {
+    var chars = document.querySelectorAll(".show-case");
+    var class_name = "full-width";
+
+    for ( var i = 0; i < chars.length; i++ ){
+        var chars_item = chars[i];
+        
+        chars_item.addEventListener ('click', function() {
+
+            var parent = this.parentNode;
+            var parent_class = parent.classList;
+            var text = this.textContent;
+
+            if ( !parent_class.contains( class_name )){
+                close_show_case ();
+                parent.classList.add( class_name );
+                this.innerHTML = create_fonts_list ( text );
+                }
+        });
+    }
+
+}
+
+function create_fonts_list ( char_item ) {
+    var show_case_content = "";
+
+    for ( var k = 0; k < fonts.length; k++ ) {
+        var font = fonts[k];
+        var font_class = font.toLowerCase(font);
+        font_class = "f-" + string_to_class ( font_class );
+        
+        show_case_content += "<span class=\"font-item " + font_class + "\" data-name=\"" + font + "\">" + char_item + "</span>";
+        }
+
+    return show_case_content;  
+}
+
+function add_action_to_close () {
+    
+    var elems = document.querySelectorAll(".close");
+
+    for ( var i = 0; i < elems.length; i++ ){
+        elems[i].addEventListener ("click", function() {
+            close_show_case ();
+            });
+    }
+}
+
+function close_show_case () {
+
+    var class_name = "full-width";
+    var show_case = document.querySelector(".full-width .show-case");
+    
+    if ( show_case ){
+        var show_case_content = show_case.getAttribute("data-char");
+        show_case.innerHTML = show_case_content;
+        remove_class ( class_name );
+        }
+}
+
 //___________ Common ___________
 
 function num_to_hex ( num ){
@@ -137,6 +201,7 @@ function initial() {
 
     add_action_to_range_select();    
     add_action_to_range_list();
+    add_action_to_close ();
 }
 
 function highlight_current_list_item ( data_range ) {
@@ -173,12 +238,12 @@ function highlight_current( data_range ) {
         }    
 }
 
-function remove_current () {
+function remove_class ( class_name ) {
 
-    var current_item = document.querySelector(".current");
+    var current_item = document.querySelector("." + class_name);
 
     if ( current_item ) {
-        current_item.classList.remove("current");
+        current_item.classList.remove( class_name );
         }
 }
 
@@ -196,4 +261,9 @@ function get_range_from_string ( data_range ) {
     var min = hex_to_num( range[0] );
     var max = hex_to_num( range[1] );
     return [ min, max ];
+}
+
+function string_to_class ( str ) {
+    var replace = / /gi;
+    return str.replace( replace, "-");
 }
