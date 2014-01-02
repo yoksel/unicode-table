@@ -40,7 +40,7 @@ blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
-}	
+}
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -56,25 +56,55 @@ BODY {
 
 A {
 	color: steelblue;
-	}	
+	}
 	A:hover {
 		text-decoration: none;
 		}
 H1 {
 	font-size: 50px;
 	}
+	@media ( max-width: 565px ){
+		H1 {
+			font-size: 40px;
+			}
+		}
+	@media ( max-width: 480px ){
+		H1 {
+			font-size: 30px;
+			}
+		}
+	@media ( max-width: 390px ){
+		H1 {
+			font-size: 25px;
+			}
+		}
 H2 {
 	font-size: 40px;
 	}
 H3 {
 	font-size: 35px;
 	}
+	@media ( max-width: 950px ){
+		H3 {
+			font-size: 30px;
+			}
+		}
+	@media ( max-width: 720px ){
+		H3 {
+			font-size: 25px;
+			}
+		}
+	@media ( max-width: 565px ){
+		H3 {
+			font-size: 20px;
+			}
+		}
 H4 {
 	font-size: 25px;
-	}		
+	}
 .example {
 	font-size: 30px;
-	}		
+	}
 P {
 	margin: 20px 0;
 	}
@@ -86,30 +116,32 @@ P {
 	}
 .f-courier-new {
 	font-family: "Courier New", monospace;;
-	}	
+	}
 .f-georgia {
 	font-family: Georgia, serif;
 	}
 .f-tahoma {
 	font-family: Tahoma, sans-serif;
-	}		
+	}
 .f-times {
 	font-family: Times, serif;
-	}	
+	}
 .f-trebuchet {
 	font-family: "Trebuchet MS";
 	}
 .f-verdana {
 	font-family: Verdana, sans-serif;
-	}			
+	}
 
 /* ---------------------- *\
 	Layout
 \* ---------------------- */
 
 .wrapper {
-	width: 1200px;
+	min-width: 300px;
+	max-width: 1160px;
 	margin: 50px auto;
+	padding: 0 20px;
 	}
 .header {
 	margin-bottom: 30px;
@@ -118,15 +150,28 @@ P {
 	text-align: center;
 	}
 .section {
-	}	
-.main {
-	width: 840px;
-	float: left;
 	}
+	.main {
+		width: 100%;
+		float: left;
+		}
+		.content {
+			margin-right: 340px;		
+			}
 	.aside {
 		width: 310px;
-		float: right;
+		float: left;
+		margin-left: -310px;
 		}
+@media (max-width: 950px){
+	.content {
+		margin-right: 0;		
+		}
+	.aside {
+		width: 100%;
+		margin-left: 0;
+		}
+	}
 .section:after,
 .header--symbols:after,
 .list--entities:after {
@@ -134,7 +179,7 @@ P {
 	display: table;
 	width: 100%;
 	clear: both;
-	}	
+	}
 
 /* ---------------------- *\
 	Entities List Header
@@ -152,21 +197,31 @@ P {
 	margin-top: 20px;
 	}
 .title--symbols {
-	float: left;
-	max-width: 530px;
+	margin-right: 300px;
 	}
 	.title--symbols SPAN {
 		margin-left: 10px;
 		font-size: 14px;
 		color: #999;
+		}
+
+@media (max-width: 1150px){
+	.select--blocks {
+		margin-bottom: 20px;
+		float: none;
+		}
+	.title--symbols {
+		margin-right: 0;
 		}	
+	}		
 
 /* ---------------------- *\
 	Entities List
 \* ---------------------- */
 
 .list--entities {
-	width: 840px;
+	float: left;
+	width: 756px;
 	margin: 30px 0;
 	padding: 2px;
 	border: 1px solid #DDD;
@@ -174,11 +229,66 @@ P {
 	font-size: 32px;
 	line-height: 1;
 	}
+	@media ( max-width: 1150px ){
+		.list--entities {
+			width: 672px;
+			}
+		}
+	@media ( max-width: 1070px ){
+		.list--entities {
+			width: 588px;
+			}
+		}
+	@media ( max-width: 990px ){
+		.list--entities {
+			width: 504px;
+			}
+		}
+	@media ( max-width: 950px ){
+		.list--entities {
+			width: 840px;
+			}
+		}
+	@media ( max-width: 880px ){
+		.list--entities {
+			width: 756px;
+			}
+		}
+	@media ( max-width: 790px ){
+		.list--entities {
+			width: 672px;
+			}
+		}
+	@media ( max-width: 720px ){
+		.list--entities {
+			width: 588px;
+			}
+		}
+	@media ( max-width: 640px ){
+		.list--entities {
+			width: 504px;
+			}
+		}
+	@media ( max-width: 565px ){
+		.list--entities {
+			width: 420px;
+			}
+		}
+	@media ( max-width: 480px ){
+		.list--entities {
+			width: 336px;
+			}
+		}
+	@media ( max-width: 390px ){
+		.list--entities {
+			width: 252px;
+			}
+		}
 	.item--entities {
 		display: block;
 		position: relative;
 		float: left;
-		width: 80px;
+		min-width: 80px;
 		height: 90px;
 		margin: 2px;
 		-webkit-box-sizing: border-box;
@@ -250,7 +360,7 @@ P {
 			.num,
 			.hex {
 				padding: 2px;
-				}		
+				}
 				LI .num,
 				LI .hex {
 					display: block;
@@ -284,19 +394,34 @@ P {
 				}
 			.close:before {
 				content: "\2715";
-				}		
+				}
 			.full-width .close {
 				display: block;
-				}			
+				}
 /* ---------------------- *\
 	Ranges List
 \* ---------------------- */	
 .aside H4 {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	}
-	.aside UL {
-		margin-bottom: 30px;
+.widget {
+	margin-bottom: 30px;
+	}
+	@media (max-width: 950px){
+		.widget {
+			float: left;
+			width: 48%;
+			}	
+		.widget:nth-child(2) {
+			float: right;
+			}		
 		}
+	@media ( max-width: 640px ){
+		.widget {
+			float: none;
+			width: 100%;
+			}	
+		}	
 	.aside LI {
 		margin: 0 0 3px 20px;
 		font-size: 14px;
@@ -314,4 +439,4 @@ P {
 				content: "\2192";
 				margin-right: 5px;
 				color: #AAA;
-				}				
+				}
