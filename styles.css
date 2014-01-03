@@ -54,6 +54,15 @@ BODY {
 	font: 16px/1.4 'Trebuchet Ms',sans-serif;
 	}
 
+::-moz-selection { 
+	background: darkorange;
+	color: #FFF;
+	}
+::selection      { 
+	background: darkorange;
+	color: #FFF;
+	}
+
 A {
 	color: steelblue;
 	}
