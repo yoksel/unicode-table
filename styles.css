@@ -204,7 +204,16 @@ P {
 .select--blocks {
 	float: right;
 	margin-top: 20px;
+	height: 1em;
 	}
+	option[disabled] {
+		margin: 3px 0;
+		padding: 5px 3px;
+		background: #DDD;
+		line-height: 2em;
+		font-weight: bold;
+		color: #000
+		}
 .title--symbols {
 	margin-right: 300px;
 	}
