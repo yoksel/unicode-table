@@ -120,6 +120,7 @@ P {
 	P:first-child {
 		margin-top: 0;
 		}
+
 .f-arial{
 	font-family: Arial, sans-serif;
 	}
@@ -349,18 +350,18 @@ P {
 				text-align: center;
 				vertical-align: middle;
 				}
-				.font-item:after {
+				.font-name {
 					content: attr(data-name);
 					display: block;
 					position: relative;
-					top: -67px;
+					margin-top: -15px;
 					font: 13px/1 Arial, sans-serif;
 					color: #999;
 					}
-				.font-item:before {
+				.font-demo:before {
 					content: "";
 					display: inline-block;
-					height: 50px;
+					height: 60px;
 					width: 0;
 					vertical-align: middle;
 					}

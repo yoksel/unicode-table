@@ -144,7 +144,10 @@ function create_fonts_list ( char_item ) {
         var font_class = font.toLowerCase(font);
         font_class = "f-" + string_to_class ( font_class );
         
-        show_case_content += "<span class=\"font-item " + font_class + "\" data-name=\"" + font + "\">" + char_item + "</span>";
+        show_case_content += "<li class=\"font-item " + font_class + "\" data-name=\"" + font + "\">";
+        show_case_content += "<span class=\"font-name\">" + font + "</span>";
+        show_case_content += "<span class=\"font-demo\">" + char_item + "</span>";
+        show_case_content += "</li>";
         }
 
     return show_case_content;  
@@ -209,7 +212,7 @@ function get_symbol( i, max ) {
 
     out += "<li class=\"item--entities\"><code><i class=\"num\">&amp;#" + i + "</i>";
     out += "<i class=\"hex\">\\" + num_to_hex(i) + "</i></code>";
-    out += "<span class=\"show-case\" data-char=\"" + char_i + "\">"  + char_i + "</span>";
+    out += "<ul class=\"show-case\" data-char=\"" + char_i + "\"><li>"  + char_i + "</li></ul>";
     out += "<span class=\"close\"></span>"; 
     out += "</li>\n"; 
 
