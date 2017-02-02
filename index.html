@@ -2,46 +2,53 @@
 layout: nil
 layout_type: mainpage
 ---
+
 <!DOCTYPE html>
 <html>
-  <head>
-            <meta charset="utf-8">
-            <meta name="description" content="Таблица символов Юникода"/>
-            <title>Таблица символов Юникода</title>
-            <link rel="stylesheet" href="styles.css"/>
-  </head>
-  <body>
-        <div class="wrapper">
-            <header class="header">
-                <h1>&#10026; Символы Юникода &#10026;</h1>
-            </header>
-            <section class="section">
-                <main class="main">
-                    <div class="content">
-                        <div class="desc">
-                            <p>Страница была сделана из любопытства с целью увидеть максимальное количество символов юникода.</p>
 
-                            <p>Для использования символа в HTML скопируйте код из <span class="num">зелёного поля</span>, для использования в CSS - из <span class="hex">голубого</span>.</p>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Таблица символов Юникода" />
+    <title>Таблица символов Юникода</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width,, initial-scale=1.0">
+</head>
 
-                            <p>Кликните по символу, чтобы посмотреть как он поддерживается в разных шрифтах.</p>
+<body>
+    <div class="page-wrapper">
+        <header class="page-header">
+            <h1>&#10026; Символы Юникода &#10026;</h1>
+        </header>
 
-                        </div>
-                        <header class="header--symbols">
-                            {% include select-blocks.html %}
-                            <h3 class="title--symbols">Блоки Юникода</h3>
-                        </header>
-                    <div class="symbols" id="symbols">
-                      Загрузка...
-                    </div>
-                    </div>
-                </main>
-                <aside class="aside">
-                    {% include aside.html %}
-                </aside>
-            </section>
-        </div>
-        <script src="useful-symbols.js"></script>
-      <script src="script.js"></script>
-        {% include counter.html %}
-  </body>
+        <main class="page-main">
+            <div class="content">
+                <div class="content__intro">
+                    <p>Страница была сделана из любопытства с целью увидеть максимальное количество символов юникода.</p>
+
+                    <p>Для использования символа в HTML скопируйте код из <span class="num">зелёного поля</span>, для использования в CSS - из <span class="hex">голубого</span>.</p>
+
+                    <p>Кликните по символу, чтобы посмотреть как он поддерживается в разных шрифтах.</p>
+
+                </div>
+                <header class="content__header">
+                    {% include select-blocks.html %}
+                    <h3 class="content__title">Блоки Юникода</h3>
+                </header>
+
+                <div class="symbols" id="symbols">
+                    Загрузка...
+                </div>
+            </div>
+        </main>
+
+        <aside class="page-aside">
+            {% include aside.html %}
+        </aside>
+    </div>
+    <script src="useful-symbols.js"></script>
+    <script src="script.js"></script>
+
+    {% include counter.html %}
+</body>
+
 </html>
