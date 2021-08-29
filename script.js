@@ -210,7 +210,7 @@ function initial() {
 
 function get_symbol( i, max ) {
     var out = "";
-    var char_i = String.fromCharCode(i);
+    var char_i = String.fromCodePoint(i);
 
     out += "<li class=\"entities__item\"><code><i class=\"num\">&amp;#" + i + "</i>";
     out += "<i class=\"hex\">\\" + num_to_hex(i) + "</i></code>";
