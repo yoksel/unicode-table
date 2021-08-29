@@ -15,10 +15,13 @@ function print_symbols ( min, max ) {
 
     out += "<ul class=\"entities\">";
 
+    if ( !max )
+        max = min;
+
     if ( max > 0 ){
         min = ( min >= 0 ) ? min : max - step + 1;
-        for ( var i = min; i <= max; i++ ){
 
+        for ( var i = min; i <= max; i++ ){
             out += get_symbol (i, max);
         }
     }
@@ -56,7 +59,8 @@ function add_action_to_range_select () {
     select.addEventListener('change', function() {
         var elem = this.options[this.selectedIndex];
         var data_range = elem.value;
-        var text = elem.text;
+        var text = elem.text
+            .replace("• ", "");
         context = "select";
 
         change_data ( data_range, text );
@@ -185,7 +189,10 @@ function num_to_hex ( num ){
 }
 
 function hex_to_num ( hex ){
-    return parseInt(hex, 16);
+    const int = parseInt(hex, 16);
+    return isNaN(int)
+        ? null
+        : int;
 }
 
 function num_readable( num ) {
