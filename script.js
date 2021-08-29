@@ -92,7 +92,9 @@ function show_range_for_url () {
 
     var text = "";
     context = "href";
-    var hash = document.location.hash.substr(1);
+    var hash = decodeURI(document.location.hash)
+        .substr(1)
+        .replace("• ", "");
     var hash_arr = hash.split(" ");
     var data_range = hash_arr[0];
 
